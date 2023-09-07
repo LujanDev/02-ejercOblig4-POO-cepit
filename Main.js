@@ -1,0 +1,27 @@
+"use strict";
+exports.__esModule = true;
+var Batalla_1 = require("./Batalla");
+var Guerrero_1 = require("./Guerrero");
+var Mago_1 = require("./Mago");
+var Personaje_1 = require("./Personaje");
+var juan = new Personaje_1.Personaje("Juan", 3, 0, 1000);
+var yani = new Guerrero_1.Guerrero("espada", "yani", 3, 0, 1000);
+var oz = new Mago_1.Mago("metamorfosis", "oz", 3, 0, 1000);
+var batalla1 = new Batalla_1.Batalla(3, yani, oz);
+console.log(batalla1.getTurno());
+batalla1.iniciarBatalla();
+console.log("El número de turnos es: " + batalla1.getTurno());
+batalla1.asignarTurno();
+console.log("La energía del guerrero es: " + yani.getEnergia());
+console.log("La energía del mago es: " + oz.getEnergia());
+oz.transformarInvisibleYPegar(yani);
+console.log("La energía de yani es: " + yani.getEnergia());
+yani.atacarEspada(oz);
+console.log("La energía de oz es: " + oz.getEnergia());
+//ataque del mago
+oz.pegarADistancia(yani);
+oz.pegarADistancia(yani);
+oz.transformarInvisibleYPegar(yani);
+oz.pegarADistancia(yani);
+oz.transformarInvisibleYPegar(yani);
+console.log("La energía del guerrero es: " + yani.getEnergia());
